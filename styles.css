@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #0f172a; /* Deep Slate Blue */
+    --secondary-color: #2563eb; /* AWS Blue Accent */
+    --text-color: #334155;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.logo {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.tagline {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.intro {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.intro h2 {
+    color: var(--primary-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #cbd5e1;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-card {
+    border-top: 4px solid var(--secondary-color); /* Makes the tech part pop out */
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.badge {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: var(--secondary-color);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.cloud-badge {
+    background-color: #eff6ff;
+    border-left: 5px solid var(--secondary-color);
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+}
