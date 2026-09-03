@@ -1,6 +1,7 @@
 :root {
     --primary-color: #0f172a; /* Deep Slate Blue */
-    --secondary-color: #2563eb; /* AWS Blue Accent */
+    --secondary-color: #2563eb; /* AWS Accent Blue */
+    --accent-hover: #1d4ed8;
     --text-color: #334155;
     --bg-color: #f8fafc;
     --card-bg: #ffffff;
@@ -30,9 +31,18 @@ header {
     border-bottom: 4px solid var(--secondary-color);
 }
 
+.company-logo {
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .logo {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     letter-spacing: 2px;
 }
 
@@ -42,86 +52,124 @@ header {
 
 .tagline {
     margin-top: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.8;
 }
 
-.intro {
+/* Tab Navigation Styling */
+.tab-navigation {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab-navigation .container {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: 2px solid transparent;
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--secondary-color);
+    background-color: #eff6ff;
+}
+
+.tab-btn.active {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+/* Tab Content Visibility logic */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
     text-align: center;
     margin: 40px 0;
 }
 
-.intro h2 {
+.section-title h2 {
     color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
     margin-bottom: 40px;
 }
 
 .card {
     background-color: var(--card-bg);
-    padding: 25px;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border-top: 4px solid #cbd5e1;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.tech-card {
-    border-top: 4px solid var(--secondary-color); /* Makes the tech part pop out */
+.feature-card {
+    border-top: 4px solid var(--secondary-color);
 }
 
 .card h3 {
     margin-top: 0;
     color: var(--primary-color);
-}
-
-.badge {
-    display: inline-block;
-    background-color: #dbeafe;
-    color: var(--secondary-color);
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-top: 10px;
+    font-size: 1.3rem;
 }
 
 .cloud-badge {
     background-color: #eff6ff;
     border-left: 5px solid var(--secondary-color);
-    padding: 15px 20px;
+    padding: 20px;
     border-radius: 4px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 40px 0;
     font-size: 0.95rem;
 }
 
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
     background-color: var(--primary-color);
     color: white;
-    font-size: 0.9rem;
-}/* Company Logo Tuning */
-.company-logo {
-    max-width: 180px; /* Perfect size for your custom geometric icon */
-    height: auto;
-    margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Elegant styling for your official registration number */
 .rc-number {
     font-size: 0.8rem;
     opacity: 0.6;

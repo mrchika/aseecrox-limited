@@ -11,61 +11,130 @@
     <!-- Header Section -->
     <header>
         <div class="container">
-            <!-- This pulls your logo image file -->
             <img src="logo.jpeg" alt="Aseecrox Limited Logo" class="company-logo">
             <h1 class="logo">ASEECROX <span>LIMITED</span></h1>
             <p class="tagline">Innovating Tech, Real Estate, Hospitality & Automotive Sales</p>
         </div>
     </header>
 
-    <!-- Main Content / Business Pillars -->
+    <!-- Navigation Tabs System -->
+    <nav class="tab-navigation">
+        <div class="container">
+            <button class="tab-btn active" onclick="openTab(event, 'tech')">💻 Tech & Cloud</button>
+            <button class="tab-btn" onclick="openTab(event, 'realestate')">🏗️ Real Estate</button>
+            <button class="tab-btn" onclick="openTab(event, 'hospitality')">🍹 Hospitality</button>
+            <button class="tab-btn" onclick="openTab(event, 'auto')">🚗 Auto Sales</button>
+        </div>
+    </nav>
+
     <main class="container">
-        <section class="intro">
-            <h2>Welcome to Aseecrox Limited</h2>
-            <p>We are a diversified holding company driving growth across critical global sectors. Explore our core business divisions below.</p>
+        
+        <!-- Tab 1: Tech & Cloud Services (THE RECRUITER GOLDMINE) -->
+        <section id="tech" class="tab-content active">
+            <div class="section-title">
+                <h2>Cloud Engineering & Tech Services</h2>
+                <p>Enterprise-grade infrastructure deployment, legacy migration, and serverless optimization specializing in Amazon Web Services (AWS).</p>
+            </div>
+            <div class="grid">
+                <div class="card feature-card">
+                    <h3>☁️ AWS Cloud Migrations</h3>
+                    <p>Moving on-premise application frameworks seamlessly to AWS with zero down-time. Expert configuration of secure Virtual Private Clouds (VPC), EC2 configurations, and secure IAM access governance.</p>
+                </div>
+                <div class="card feature-card">
+                    <h3>⚡ Serverless Microservices</h3>
+                    <p>Architecting highly available, modern application environments utilizing AWS Lambda, API Gateway, and Amazon DynamoDB to minimize compute runtime costs to nearly $0.00.</p>
+                </div>
+                <div class="card feature-card">
+                    <h3>🔄 DevOps & CI/CD Pipeline Automation</h3>
+                    <p>Implementing GitOps workflows. Automated continuous integration and deployment pipelines using GitHub Actions and automated system builds to minimize human delivery overhead.</p>
+                </div>
+            </div>
         </section>
 
-        <div class="grid">
-            <!-- Pillar 1: Tech Services (Our Priority) -->
-            <div class="card tech-card">
-                <h3>💻 Cloud & Tech Services</h3>
-                <p>Enterprise-grade cloud architecture, migrations, and serverless solution design specializing in Amazon Web Services (AWS).</p>
-                <span class="badge">Core Enterprise Pillar</span>
+        <!-- Tab 2: Real Estate Development -->
+        <section id="realestate" class="tab-content">
+            <div class="section-title">
+                <h2>Real Estate Development</h2>
+                <p>Developing premium modern commercial layouts, luxury structural design, and futuristic residential community builds.</p>
             </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>🏢 Commercial Projects</h3>
+                    <p>High-end corporate office complexes and technology hubs tailored for growing teams.</p>
+                </div>
+                <div class="card">
+                    <h3>🏡 Premium Residential</h3>
+                    <p>Modern architectural smart-homes emphasizing sustainable infrastructure and pristine finishings.</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Pillar 2: Real Estate -->
-            <div class="card">
-                <h3>🏗️ Real Estate Development</h3>
-                <p>Developing modern commercial spaces and premium residential properties built for the future.</p>
+        <!-- Tab 3: Hospitality & Bars -->
+        <section id="hospitality" class="tab-content">
+            <div class="section-title">
+                <h2>Hospitality & Entertainment</h2>
+                <p>Curating exceptional premium entertainment spaces, nightlife events, and luxury social venues.</p>
             </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>🍸 Luxury Lounges & Bars</h3>
+                    <p>Vibrant spaces designed with unmatched ambiances, top-tier mixology, and high-profile networking environments.</p>
+                </div>
+                <div class="card">
+                    <h3>🍽️ Hospitality Management</h3>
+                    <p>Bespoke catering and event management frameworks built to establish world-class guest experiences.</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Pillar 3: Hospitality -->
-            <div class="card">
-                <h3>🍹 Hospitality & Bars</h3>
-                <p>Curating exceptional premium entertainment spaces, premium dining experiences, and nightlife venues.</p>
+        <!-- Tab 4: Auto Sales -->
+        <section id="auto" class="tab-content">
+            <div class="section-title">
+                <h2>Automotive Sales Network</h2>
+                <p>Your trusted premium dealership network delivering luxury vehicles, heavy-duty commercial fleets, and reliable daily drives.</p>
             </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>🏎️ Luxury & Sports Fleets</h3>
+                    <p>Sourcing and importing custom premium vehicles fitted with exclusive tech upgrades and performance configurations.</p>
+                </div>
+                <div class="card">
+                    <h3>🚚 Commercial Logistics Vehicles</h3>
+                    <p>Heavy-duty trucks, corporate delivery vans, and specialized corporate mobility assets.</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Pillar 4: Auto Sales -->
-            <div class="card">
-                <h3>🚗 Automotive Sales</h3>
-                <p>Your trusted dealership network for premium luxury, commercial, and reliable daily-drive vehicles.</p>
-            </div>
-        </div>
+        <!-- Cloud Pipeline Architecture Badge for Recruiters -->
+        <section class="cloud-badge">
+            <p>🛠️ <strong>DevOps Architecture Note:</strong> This platform features continuous deployment via a **GitOps workflow**. Any code alterations pushed to the linked GitHub repository automatically activate an isolated automated build, publishing modifications globally via **AWS infrastructure** within 60 seconds.</p>
+        </section>
+
     </main>
 
-    <!-- Infrastructure Cloud Badge (For Recruiters!) -->
-    <section class="cloud-badge container">
-        <p>🛠️ <strong>Cloud Architecture Note:</strong> This entire platform is securely hosted, globally distributed, and automated utilizing a fully serverless architecture built on <strong>Amazon Web Services (AWS)</strong>.</p>
-    </section>
-
-    <!-- Footer -->
-   footer>
+    <!-- Footer Section -->
+    <footer>
         <div class="container">
             <p>&copy; 2026 Aseecrox Limited. All Rights Reserved.</p>
-            <!-- 👇 WE ADDED YOUR OFFICIAL RC NUMBER HERE FOR CREDIBILITY -->
             <p class="rc-number">RC: 1682472</p>
         </div>
     </footer>
 
+    <!-- Interactive Navigation Script -->
+    <script>
+        function openTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
