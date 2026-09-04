@@ -154,6 +154,111 @@ header {
     font-size: 1.3rem;
 }
 
+/* CORPORATE INFO COMPONENT PANELS */
+.corporate-info-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.info-column h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.leadership-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.avatar {
+    font-size: 2rem;
+    background-color: #e2e8f0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.leadership-card h4 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.leadership-card .role {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.address {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #cbd5e1;
+}
+
+.contact-links, .email-links {
+    margin-top: 20px;
+}
+
+.contact-links p, .email-links p {
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.contact-btn, .email-btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.contact-btn {
+    background-color: var(--secondary-color);
+}
+
+.contact-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Distinct styling for your email nodes to look clean and separate */
+.email-btn {
+    background-color: #475569;
+}
+
+.email-btn:hover {
+    background-color: #334155;
+}
+
 .cloud-badge {
     background-color: #eff6ff;
     border-left: 5px solid var(--secondary-color);
