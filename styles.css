@@ -100,12 +100,21 @@ header {
 /* Tab Content Visibility logic */
 .tab-content {
     display: none;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 20px;
     animation: fadeIn 0.5s ease;
 }
 
 .tab-content.active {
     display: block;
 }
+
+/* ELITE FEATURE: SECTOR DISTINCT THEMED BACKGROUNDS */
+.tab-tech-bg { background: linear-gradient(to bottom, #eff6ff, #ffffff); border-left: 6px solid #2563eb; }
+.tab-realestate-bg { background: linear-gradient(to bottom, #f0fdf4, #ffffff); border-left: 6px solid #16a34a; }
+.tab-hospitality-bg { background: linear-gradient(to bottom, #fdf2f8, #ffffff); border-left: 6px solid #db2777; }
+.tab-auto-bg { background: linear-gradient(to bottom, #fff7ed, #ffffff); border-left: 6px solid #ea580c; }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -114,7 +123,7 @@ header {
 
 .section-title {
     text-align: center;
-    margin: 40px 0;
+    margin-bottom: 30px;
 }
 
 .section-title h2 {
@@ -127,7 +136,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .card {
@@ -144,9 +153,11 @@ header {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.feature-card {
-    border-top: 4px solid var(--secondary-color);
-}
+/* Color Coding Hover Enhancements */
+.feature-card { border-top: 4px solid #2563eb; }
+.estate-card { border-top: 4px solid #16a34a; }
+.hospitality-card { border-top: 4px solid #db2777; }
+.auto-card { border-top: 4px solid #ea580c; }
 
 .card h3 {
     margin-top: 0;
@@ -154,19 +165,19 @@ header {
     font-size: 1.3rem;
 }
 
-/* CORPORATE INFO COMPONENT PANELS */
+/* CORPORATE INFO & FORM PANEL STYLES */
 .corporate-info-section {
     background-color: #ffffff;
     padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    margin-top: 40px;
-    border-bottom: 4px solid var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 50px;
+    border-top: 4px solid var(--primary-color);
 }
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
 }
 
@@ -181,37 +192,28 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background-color: #f8fafc;
-    padding: 15px;
+    padding: 12px;
     border-radius: 6px;
 }
 
 .avatar {
-    font-size: 2rem;
+    font-size: 1.8rem;
     background-color: #e2e8f0;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
 }
 
-.leadership-card h4 {
-    margin: 0;
-    color: var(--primary-color);
-}
-
-.leadership-card .role {
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--secondary-color);
-    font-weight: 600;
-}
+.leadership-card h4 { margin: 0; color: var(--primary-color); }
+.leadership-card .role { margin: 0; font-size: 0.85rem; color: var(--secondary-color); font-weight: 600; }
 
 .address {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
     color: var(--primary-color);
     background-color: #f8fafc;
@@ -220,43 +222,75 @@ header {
     border-left: 4px solid #cbd5e1;
 }
 
-.contact-links, .email-links {
-    margin-top: 20px;
-}
-
-.contact-links p, .email-links p {
-    margin-bottom: 8px;
-    color: var(--primary-color);
-}
+.contact-links, .email-links { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; }
 
 .contact-btn, .email-btn {
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 14px;
     border-radius: 6px;
-    font-weight: bold;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+    font-weight: 600;
+    font-size: 0.85rem;
     transition: background 0.2s ease;
 }
+.contact-btn { background-color: var(--secondary-color); }
+.contact-btn:hover { background-color: var(--accent-hover); }
+.email-btn { background-color: #475569; }
+.email-btn:hover { background-color: #334155; }
 
-.contact-btn {
-    background-color: var(--secondary-color);
+/* ELITE INTERACTIVE FORM COMPONENTS */
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-
-.contact-btn:hover {
-    background-color: var(--accent-hover);
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
-
-/* Distinct styling for your email nodes to look clean and separate */
-.email-btn {
-    background-color: #475569;
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
 }
+.form-group input, .form-group select, .form-group textarea {
+    padding: 10px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+.submit-form-btn {
+    background-color: #16a34a; /* Success Green */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.submit-form-btn:hover { background-color: #15803d; }
 
-.email-btn:hover {
-    background-color: #334155;
+/* Success Notification States */
+.form-success-hidden { display: none; }
+.form-success-visible {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #dcfce7;
+    color: #15803d;
+    border-left: 5px solid #16a34a;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    animation: fadeIn 0.3s ease;
 }
 
 .cloud-badge {
@@ -275,9 +309,4 @@ footer {
     color: white;
 }
 
-.rc-number {
-    font-size: 0.8rem;
-    opacity: 0.6;
-    margin-top: 5px;
-    letter-spacing: 1px;
-}
+.rc-number { font-size: 0.8rem; opacity: 0.6; margin-top: 5px; letter-spacing: 1px; }
