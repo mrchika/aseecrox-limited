@@ -17,7 +17,7 @@
         </div>
     </header>
 
-    <!-- Navigation Tabs System -->
+    <!-- Navigation Tabs System - ONLY 1 NAV -->
     <nav class="tab-navigation">
         <div class="container">
             <button class="tab-btn active" onclick="openTab(event, 'tech')">💻 Tech & Cloud</button>
@@ -28,88 +28,74 @@
     </nav>
 
     <main class="container">
-        
-        <!-- Tab 1: Tech & Cloud Services -->
+        <!-- TECH TAB -->
         <section id="tech" class="tab-content active tab-tech-bg">
-            <div class="section-title">
-                <h2>Cloud Engineering & Tech Services</h2>
-                <p>Enterprise-grade infrastructure deployment, legacy migration, and serverless optimization specializing in Amazon Web Services (AWS).</p>
-            </div>
+            <h2>Tech & Cloud Solutions</h2>
             <div class="grid">
-                <div class="card feature-card">
+                <a href="#corporate-info" class="card feature-card clickable-card" onclick="selectService('Tech', 'AWS Cloud Migrations')">
                     <h3>☁️ AWS Cloud Migrations</h3>
-                    <p>Moving on-premise application frameworks seamlessly to AWS with zero down-time. Expert configuration of secure Virtual Private Clouds (VPC), EC2 configurations, and secure IAM access governance.</p>
-                </div>
-                <div class="card feature-card">
+                    <p>Moving on-premise application frameworks to scalable, secure, and cost-optimized AWS cloud environments.</p>
+                </a>
+                <a href="#corporate-info" class="card feature-card clickable-card" onclick="selectService('Tech', 'Serverless Microservices')">
                     <h3>⚡ Serverless Microservices</h3>
-                    <p>Architecting highly available, modern application environments utilizing AWS Lambda, API Gateway, and Amazon DynamoDB to minimize compute runtime costs to nearly $0.00.</p>
-                </div>
-                <div class="card feature-card">
-                    <h3>🔄 DevOps & CI/CD Pipeline Automation</h3>
-                    <p>Implementing GitOps workflows. Automated continuous integration and deployment pipelines using GitHub Actions and automated system builds to minimize human delivery overhead.</p>
-                </div>
+                    <p>Architecting highly available, modern application environments using AWS Lambda, API Gateway, and Fargate.</p>
+                </a>
+                <a href="#corporate-info" class="card feature-card clickable-card" onclick="selectService('Tech', 'DevOps & CI/CD Pipeline Automation')">
+                    <h3>🔧 DevOps & CI/CD Pipeline Automation</h3>
+                    <p>Implementing GitOps workflows. Automated continuous integration and deployment pipelines on AWS.</p>
+                </a>
             </div>
         </section>
 
-        <!-- Tab 2: Real Estate Development -->
+        <!-- REAL ESTATE TAB -->
         <section id="realestate" class="tab-content tab-realestate-bg">
-            <div class="section-title">
-                <h2>Real Estate Development</h2>
-                <p>Developing premium modern commercial layouts, luxury structural design, and futuristic residential community builds.</p>
-            </div>
+            <h2>Real Estate Development</h2>
             <div class="grid">
-                <div class="card estate-card">
+                <a href="#corporate-info" class="card estate-card clickable-card" onclick="selectService('RealEstate', 'Commercial Projects')">
                     <h3>🏢 Commercial Projects</h3>
-                    <p>High-end corporate office complexes and technology hubs tailored for growing teams looking for premium modern work ecosystems.</p>
-                </div>
-                <div class="card estate-card">
-                    <h3>🏡 Premium Residential</h3>
-                    <p>Modern architectural smart-homes emphasizing sustainable infrastructure, automated security grids, and pristine elite finishings.</p>
-                </div>
+                    <p>High-end corporate office complexes and mixed-use developments built to global standards.</p>
+                </a>
+                <a href="#corporate-info" class="card estate-card clickable-card" onclick="selectService('RealEstate', 'Residential Estates')">
+                    <h3>🏡 Residential Estates</h3>
+                    <p>Luxury gated communities and smart homes designed for modern living and maximum ROI.</p>
+                </a>
             </div>
         </section>
 
-        <!-- Tab 3: Hospitality & Bars -->
+        <!-- HOSPITALITY TAB -->
         <section id="hospitality" class="tab-content tab-hospitality-bg">
-            <div class="section-title">
-                <h2>Hospitality & Entertainment</h2>
-                <p>Curating exceptional premium entertainment spaces, vibrant nightlife events, and luxury social lounge venues.</p>
-            </div>
+            <h2>Hospitality & Design</h2>
             <div class="grid">
-                <div class="card hospitality-card">
+                <a href="#corporate-info" class="card hospitality-card clickable-card" onclick="selectService('Hospitality', 'Luxury Lounges & Bars')">
                     <h3>🍸 Luxury Lounges & Bars</h3>
-                    <p>Vibrant spaces designed with unmatched sophisticated ambiances, top-tier mixology, and high-profile networking environments.</p>
-                </div>
-                <div class="card hospitality-card">
-                    <h3>🍽️ Hospitality Management</h3>
-                    <p>Bespoke catering and event management frameworks engineered to establish world-class, memorable guest experiences.</p>
-                </div>
+                    <p>Vibrant spaces designed for premium experience, ambiance, and high-traffic customer engagement.</p>
+                </a>
+                <a href="#corporate-info" class="card hospitality-card clickable-card" onclick="selectService('Hospitality', 'Boutique Hotels')">
+                    <h3>🏨 Boutique Hotels</h3>
+                    <p>Full-service hospitality design and management focused on guest experience and operational efficiency.</p>
+                </a>
             </div>
         </section>
 
-        <!-- Tab 4: Auto Sales -->
+        <!-- AUTOMOTIVE TAB -->
         <section id="auto" class="tab-content tab-auto-bg">
-            <div class="section-title">
-                <h2>Automotive Sales Network</h2>
-                <p>Your trusted premium dealership network delivering luxury performance vehicles, heavy-duty commercial fleets, and reliable daily drives.</p>
-            </div>
+            <h2>Automotive Solutions</h2>
             <div class="grid">
-                <div class="card auto-card">
+                <a href="#corporate-info" class="card auto-card clickable-card" onclick="selectService('Automotive', 'Luxury & Sports Fleets')">
                     <h3>🏎️ Luxury & Sports Fleets</h3>
-                    <p>Sourcing and importing custom premium vehicles fitted with exclusive tech upgrades, high-performance engines, and luxury configurations.</p>
-                </div>
-                <div class="card auto-card">
-                    <h3>🚚 Commercial Logistics Vehicles</h3>
-                    <p>Heavy-duty trucks, corporate delivery vans, and specialized corporate mobility assets tailored for distribution networks.</p>
-                </div>
+                    <p>Sourcing and importing custom luxury and high-performance vehicles for individuals and corporations.</p>
+                </a>
+                <a href="#corporate-info" class="card auto-card clickable-card" onclick="selectService('Automotive', 'Fleet Management')">
+                    <h3>🚚 Fleet Management</h3>
+                    <p>Corporate fleet procurement, maintenance, and logistics solutions for businesses.</p>
+                </a>
             </div>
         </section>
-
     </main>
 
-    <!-- FIXED AREA: PLACED OUTSIDE THE TAB LOOP SO IT NEVER LOCKS UP -->
+    <!-- CORPORATE INFO FORM SECTION - ONLY 1 FORM NOW -->
     <div class="container">
-        <section class="corporate-info-section">
+       <section id="corporate-info" class="corporate-info-section">
             <div class="info-grid">
                 
                 <!-- Left: Corporate Data -->
@@ -129,24 +115,18 @@
                             <p class="role">Managing Director (MD)</p>
                         </div>
                     </div>
-
                     <h3 style="margin-top: 30px;">📍 Headquarters</h3>
                     <p class="address">21, Isheri Road, Ojodu,<br>Lagos, Nigeria.</p>
-                    
                     <div class="contact-links">
                         <a href="tel:+2347038797948" class="contact-btn">0703 879 7948</a>
                         <a href="tel:+2348057560799" class="contact-btn">0805 756 0799</a>
-                    </div>
-                    <div class="email-links">
-                        <a href="mailto:Aseecroxlimited@gmail.com" class="email-btn">Aseecroxlimited@gmail.com</a>
-                        <a href="mailto:Aseecroxlimited@yahoo.com" class="email-btn">Aseecroxlimited@yahoo.com</a>
                     </div>
                 </div>
 
                 <!-- Right: Interactive Registration Form -->
                 <div class="info-column">
                     <h3>📨 Project Inquiry Registry</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Submit your requirements below. Our corporate desk will route your brief to the respective sector division within 24 hours.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Submit your requirements below.</p>
                     
                     <form class="inquiry-form" onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
@@ -169,18 +149,48 @@
                         </div>
                         <div class="form-group">
                             <label>Project Requirements / Brief</label>
-                            <textarea id="project-brief" rows="4" required placeholder="Describe your project, fleet requirements, or property brief..."></textarea>
+                            <textarea id="project-brief" rows="4" required placeholder="Describe your project..."></textarea>
                         </div>
                         <button type="submit" class="submit-form-btn">Submit Registry Brief 🚀</button>
                     </form>
                     
-                    <!-- SUCCESS ALERT AREA -->
                     <div id="form-success-alert" class="form-success-hidden">
-                        🎉 <strong>Brief Registered!</strong> Thank you. Your inquiry has been securely routed into the Aseecrox pipeline queue.
+                        🎉 <strong>Brief Registered!</strong> Thank you.
                     </div>
                 </div>
-
             </div>
         </section>
+    </div>
 
-        <!-- DevOps Automation Note -->
+    <!-- ALL JS IN ONE PLACE -->
+    <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+
+    function selectService(sector, serviceName) {
+        document.getElementById('sector-select').value = sector;
+        document.getElementById('project-brief').value = `I am interested in: ${serviceName}. Please send me more details.`;
+        document.querySelector('.corporate-info-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        document.getElementById('form-success-alert').className = 'form-success-visible';
+        setTimeout(() => {
+            document.getElementById('form-success-alert').className = 'form-success-hidden';
+        }, 5000);
+    }
+    </script>
+</body>
+</html>

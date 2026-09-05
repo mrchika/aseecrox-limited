@@ -313,3 +313,22 @@ footer {
 }
 
 .rc-number { font-size: 0.8rem; opacity: 0.6; margin-top: 5px; letter-spacing: 1px; }
+/* CLICKABLE CARDS FIX */
+.clickable-card {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.clickable-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-top-color: var(--secondary-color) !important;
+}
+
+/* This stops text inside from blocking the click */
+.clickable-card * {
+    pointer-events: none;
+}
