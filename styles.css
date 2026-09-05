@@ -56,14 +56,14 @@ header {
     opacity: 0.8;
 }
 
-/* Tab Navigation Styling */
+/* Tab Navigation Styling - CRITICAL FIX FOR CLICKABILITY */
 .tab-navigation {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 999; /* Higher z-index ensures buttons always sit above layouts */
 }
 
 .tab-navigation .container {
@@ -84,6 +84,8 @@ header {
     cursor: pointer;
     border-radius: 6px;
     transition: all 0.3s ease;
+    z-index: 1000; /* Forces buttons to register clicking gestures */
+    position: relative;
 }
 
 .tab-btn:hover {
@@ -97,27 +99,28 @@ header {
     border-color: var(--secondary-color);
 }
 
-/* Tab Content Visibility logic */
+/* Tab Content Core Configuration */
 .tab-content {
-    display: none;
+    display: none; /* Keeps inactive tabs perfectly hidden and non-blocking */
     padding: 30px;
     border-radius: 12px;
     margin-top: 20px;
-    animation: fadeIn 0.5s ease;
+    box-sizing: border-box;
 }
 
 .tab-content.active {
-    display: block;
+    display: block !important; /* Forces the active tab to appear layout-safe */
+    animation: fadeIn 0.4s ease;
 }
 
-/* ELITE FEATURE: SECTOR DISTINCT THEMED BACKGROUNDS */
+/* SECTOR DISTINCT GRADIENT THEMES */
 .tab-tech-bg { background: linear-gradient(to bottom, #eff6ff, #ffffff); border-left: 6px solid #2563eb; }
 .tab-realestate-bg { background: linear-gradient(to bottom, #f0fdf4, #ffffff); border-left: 6px solid #16a34a; }
 .tab-hospitality-bg { background: linear-gradient(to bottom, #fdf2f8, #ffffff); border-left: 6px solid #db2777; }
 .tab-auto-bg { background: linear-gradient(to bottom, #fff7ed, #ffffff); border-left: 6px solid #ea580c; }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -153,7 +156,7 @@ header {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* Color Coding Hover Enhancements */
+/* Color Coding Borders */
 .feature-card { border-top: 4px solid #2563eb; }
 .estate-card { border-top: 4px solid #16a34a; }
 .hospitality-card { border-top: 4px solid #db2777; }
@@ -165,7 +168,7 @@ header {
     font-size: 1.3rem;
 }
 
-/* CORPORATE INFO & FORM PANEL STYLES */
+/* CORPORATE INFO & INQUIRY STYLES */
 .corporate-info-section {
     background-color: #ffffff;
     padding: 40px;
@@ -228,7 +231,7 @@ header {
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: 8px 14px;
+    padding: 10px 14px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.85rem;
@@ -239,7 +242,7 @@ header {
 .email-btn { background-color: #475569; }
 .email-btn:hover { background-color: #334155; }
 
-/* ELITE INTERACTIVE FORM COMPONENTS */
+/* REGISTRY FORM INTERACTIVITY */
 .inquiry-form {
     display: flex;
     flex-direction: column;
@@ -280,7 +283,7 @@ header {
 }
 .submit-form-btn:hover { background-color: #15803d; }
 
-/* Success Notification States */
+/* Success Banner Display Rules */
 .form-success-hidden { display: none; }
 .form-success-visible {
     margin-top: 15px;

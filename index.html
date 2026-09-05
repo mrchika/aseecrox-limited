@@ -105,7 +105,10 @@
             </div>
         </section>
 
-        <!-- COMPONENT: INTERACTIVE INQUIRY FORM & CORPORATE INFO -->
+    </main>
+
+    <!-- FIXED AREA: PLACED OUTSIDE THE TAB LOOP SO IT NEVER LOCKS UP -->
+    <div class="container">
         <section class="corporate-info-section">
             <div class="info-grid">
                 
@@ -131,31 +134,31 @@
                     <p class="address">21, Isheri Road, Ojodu,<br>Lagos, Nigeria.</p>
                     
                     <div class="contact-links">
-                        <a href="tel:+2347038797948" class="contact-btn">📞 0703 879 7948</a>
-                        <a href="tel:+2348057560799" class="contact-btn">📞 0805 756 0799</a>
+                        <a href="tel:+2347038797948" class="contact-btn">0703 879 7948</a>
+                        <a href="tel:+2348057560799" class="contact-btn">0805 756 0799</a>
                     </div>
                     <div class="email-links">
-                        <a href="mailto:Aseecroxlimited@gmail.com" class="email-btn">✉️ Gmail Channel</a>
-                        <a href="mailto:Aseecroxlimited@yahoo.com" class="email-btn">✉️ Yahoo Channel</a>
+                        <a href="mailto:Aseecroxlimited@gmail.com" class="email-btn">Aseecroxlimited@gmail.com</a>
+                        <a href="mailto:Aseecroxlimited@yahoo.com" class="email-btn">Aseecroxlimited@yahoo.com</a>
                     </div>
                 </div>
 
-                <!-- Right: ELITE INTERACTIVE INQUIRY FORM -->
+                <!-- Right: Interactive Registration Form -->
                 <div class="info-column">
                     <h3>📨 Project Inquiry Registry</h3>
                     <p style="font-size: 0.9rem; margin-bottom: 20px;">Submit your requirements below. Our corporate desk will route your brief to the respective sector division within 24 hours.</p>
                     
                     <form class="inquiry-form" onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
-                            <label for="client-name">Full Name / Corporate Entity</label>
+                            <label>Full Name / Corporate Entity</label>
                             <input type="text" id="client-name" required placeholder="e.g., John Doe / ABC Tech Ltd">
                         </div>
                         <div class="form-group">
-                            <label for="client-email">Official Email Address</label>
+                            <label>Official Email Address</label>
                             <input type="email" id="client-email" required placeholder="name@company.com">
                         </div>
                         <div class="form-group">
-                            <label for="sector-select">Target Business Sector</label>
+                            <label>Target Business Sector</label>
                             <select id="sector-select" required>
                                 <option value="" disabled selected>Select a sector...</option>
                                 <option value="Tech">💻 Cloud Engineering & Tech Services</option>
@@ -165,11 +168,13 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="project-brief">Project Requirements / Brief</label>
+                            <label>Project Requirements / Brief</label>
                             <textarea id="project-brief" rows="4" required placeholder="Describe your project, fleet requirements, or property brief..."></textarea>
                         </div>
                         <button type="submit" class="submit-form-btn">Submit Registry Brief 🚀</button>
                     </form>
+                    
+                    <!-- SUCCESS ALERT AREA -->
                     <div id="form-success-alert" class="form-success-hidden">
                         🎉 <strong>Brief Registered!</strong> Thank you. Your inquiry has been securely routed into the Aseecrox pipeline queue.
                     </div>
@@ -178,4 +183,4 @@
             </div>
         </section>
 
-        <!-- Cloud Pipeline Architecture Badge for Recruiters -->
+        <!-- DevOps Automation Note -->
