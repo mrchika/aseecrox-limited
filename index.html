@@ -1,87 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aseecrox Limited - Cloud, Real Estate, Auto Sales, Hospital & Hospitality</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="hero">
-        <div class="container">
-            <img src="logo.jpeg" alt="Aseecrox Limited Logo" class="logo">
-            <h1>Aseecrox Limited</h1>
-            <h2>Cloud Infrastructure, Real Estate, Auto Sales, Hospital & Hospitality</h2>
-            <p>Building on AWS. Developing properties. Selling autos. Healthcare. Hospitality.</p>
-            <a href="#contact" class="btn">Book a Consultation</a>
-        </div>
-    </header>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+.container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; }
 
-    <section class="services container">
-        <h2>Our Services</h2>
-        <div class="grid">
-            <!-- CLOUD & TECH -->
-            <div class="card"><h3>☁️ AWS Cloud & DevOps</h3><p>Cloud architecture, CI/CD, Docker, Kubernetes, Terraform. AWS only.</p></div>
-            <div class="card"><h3>📊 Monitoring & Security</h3><p>CloudWatch, IAM, Security Groups. 24/7 monitoring and security for your AWS apps.</p></div>
-            
-            <!-- REAL ESTATE -->
-            <div class="card"><h3>🏢 Real Estate Development</h3><p>Property development, sales, and management. Residential and commercial projects.</p></div>
-            <div class="card"><h3>🏠 Property Management</h3><p>We manage, lease, and maintain properties for maximum returns.</p></div>
-            
-            <!-- AUTO SALES -->
-            <div class="card"><h3>🚗 Auto Sales</h3><p>New and used vehicle sales. Car importation, leasing, and fleet management.</p></div>
-            
-            <!-- HOSPITAL -->
-            <div class="card"><h3>🏥 Hospital & Healthcare</h3><p>Quality healthcare services, medical consulting, and hospital management.</p></div>
-            
-            <!-- HOSPITALITY -->
-            <div class="card"><h3>🏨 Hospitality Management</h3><p>Hotel management, bookings, and guest experience solutions.</p></div>
-            <div class="card"><h3>🍽️ Restaurant & Events</h3><p>Hospitality consulting and event management services.</p></div>
-        </div>
-    </section>
+.tabs { display: flex; gap: 10px; margin-bottom: 30px; }
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.tab-btn.active { background: #2563eb; color: white; }
 
-    <section class="tech">
-        <div class="container">
-            <h2>Our AWS Cloud Tech Stack</h2>
-            <div class="tech-grid">
-                <span>AWS</span><span>EC2</span><span>S3</span>
-                <span>Docker</span><span>Kubernetes</span><span>Terraform</span>
-                <span>CloudWatch</span><span>IAM</span><span>Lambda</span>
-            </div>
-        </div>
-    </section>
+.tab-content { display: none; }
+.tab-content.active { display: block; }
 
-    <section class="team container">
-        <h2>Meet Our Executives</h2>
-        <div class="grid">
-            <div class="card"><h3>Eric Chika Ukpaka</h3><p>Chief Executive Officer</p></div>
-            <div class="card"><h3>Samson Ukpaka</h3><p>Director</p></div>
-        </div>
-    </section>
+h1 { font-size: 2rem; color: #1e293b; }
+.subtitle { color: #64748b; margin-bottom: 30px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
+.service-card { border-top: 3px solid #2563eb; padding-top: 15px; }
+.service-card h3 { margin-bottom: 10px; }
 
-    <section id="contact" class="contact container">
-        <h2>Let's Work Together</h2>
-        <p>Cloud, Real Estate, Auto Sales, Hospital, or Hospitality - Send us a message.</p>
-        
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Tell us about your project" rows="5" required></textarea>
-            <button type="submit" class="btn">Send Request</button>
-        </form>
+.note { border-left: 4px solid #2563eb; padding: 15px; background: #eff6ff; margin: 30px 0; }
 
-        <div class="contact-info">
-            <p><strong>Email:</strong> Aseecroxlimited@gmail.com</p>
-            <p><strong>Email:</strong> Aseecroxlimited@yahoo.com</p>
-            <p><strong>Phone:</strong> 08038797948</p>
-            <p><strong>Phone:</strong> 08057560799</p>
-            <p><strong>Location:</strong> Lagos, Nigeria</p>
-        </div>
-    </section>
+.info-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #ddd; }
+.exec { margin-bottom: 15px; }
+.pill { background: #2563eb; color: white; padding: 8px 15px; border-radius: 20px; display: inline-block; margin: 5px 5px 5px 0; }
 
-    <footer>
-        <p>© 2026 Aseecrox Limited. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #64748b; }
