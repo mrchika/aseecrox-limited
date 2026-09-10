@@ -1,36 +1,221 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-}
-.container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASEECROX LIMITED | Enterprise Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
 
-.tabs { display: flex; gap: 10px; margin-bottom: 30px; }
-.tab-btn {
-    padding: 12px 24px;
-    border: none;
-    background: #e0e0e0;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-}
-.tab-btn.active { background: #2563eb; color: white; }
+    <div class="container">
+        <!-- Main Corporate Banner Header -->
+        <header class="hero-banner">
+            <div class="logo-area">
+                <img src="logo.jpeg" alt="Aseecrox Logo" class="brand-logo" onerror="this.style.display='none';">
+                <span class="logo-text">ASEECROX LIMITED</span>
+            </div>
+            <h1>Innovating Tech, Real Estate, Hospitality & Automotive Sales</h1>
+        </header>
 
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+        <!-- Sector Dynamic Switcher Navigation Tabs -->
+        <nav class="sector-tabs">
+            <button class="tab-btn active" onclick="changeSector('tech', this)">
+                <span>☁️</span> Tech & Cloud
+            </button>
+            <button class="tab-btn" onclick="changeSector('real-estate', this)">
+                <span>🏢</span> Real Estate
+            </button>
+            <button class="tab-btn" onclick="changeSector('hospitality', this)">
+                <span>🏨</span> Hospitality
+            </button>
+            <button class="tab-btn" onclick="changeSector('auto', this)">
+                <span>🚗</span> Auto Sales
+            </button>
+        </nav>
 
-h1 { font-size: 2rem; color: #1e293b; }
-.subtitle { color: #64748b; margin-bottom: 30px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
-.service-card { border-top: 3px solid #2563eb; padding-top: 15px; }
-.service-card h3 { margin-bottom: 10px; }
+        <!-- Dynamic Grid Content Injection Container -->
+        <main class="services-panel">
+            <h2 id="display-title" class="panel-title">Tech & Cloud Solutions</h2>
+            <div id="display-grid" class="services-grid">
+                <!-- Javascript builds content nodes here dynamically -->
+            </div>
+        </main>
 
-.note { border-left: 4px solid #2563eb; padding: 15px; background: #eff6ff; margin: 30px 0; }
+        <!-- Lower Section Layout: Executive Leadership Info + Registry Form -->
+        <section class="info-footer-layout">
+            <div class="info-sidebar">
+                <!-- Corporate Leadership Block -->
+                <div class="info-block">
+                    <h3>👥 Executive Leadership</h3>
+                    <div class="leader-item">
+                        <div class="leader-name">Eric Chika Ukpaka</div>
+                        <div class="leader-title">Chief Executive Officer (CEO)</div>
+                    </div>
+                    <div class="leader-item">
+                        <div class="leader-name">Samson Ukpaka</div>
+                        <div class="leader-title">Managing Director (MD)</div>
+                    </div>
+                </div>
 
-.info-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; padding-top: 30px; border-top: 1px solid #ddd; }
-.exec { margin-bottom: 15px; }
-.pill { background: #2563eb; color: white; padding: 8px 15px; border-radius: 20px; display: inline-block; margin: 5px 5px 5px 0; }
+                <!-- Corporate Location Address Block -->
+                <div class="info-block">
+                    <h3>📍 Headquarters</h3>
+                    <p class="hq-text">21, Isheri Road, Ojodu,<br>Lagos, Nigeria.</p>
+                    <div class="phone-container">
+                        <span class="phone-badge">📞 0703 879 7948</span>
+                        <span class="phone-badge">📞 0805 756 0799</span>
+                    </div>
+                </div>
+            </div>
 
-footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #64748b; }
+            <!-- Contact Input Collection Form Registry Component -->
+            <div class="registry-container">
+                <h3>📋 Project Inquiry Registry</h3>
+                <p class="registry-subtitle">Submit your requirements below.</p>
+                
+                <form id="awsContactForm" onsubmit="submitToAwsApi(event)">
+                    <div class="form-group">
+                        <label for="fullName">Full Name / Corporate Entity</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="e.g. John Doe / ABC Tech Ltd" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Official Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="name@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sectorSelect">Target Business Sector</label>
+                        <select id="sectorSelect" class="form-control" required>
+                            <option value="" disabled selected>Select a sector...</option>
+                            <option value="tech">Tech & Cloud Solutions</option>
+                            <option value="real-estate">Real Estate Development</option>
+                            <option value="hospitality">Hospitality & Bar Management</option>
+                            <option value="auto">Automobile Sales</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brief">Project Requirements / Brief</label>
+                        <textarea id="brief" class="form-control" rows="4" placeholder="Describe your project..." required></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="submit-btn">
+                        Submit Registry Brief ✓
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script Application Logic Controller -->
+    <script>
+        const sectorData = {
+            tech: {
+                title: "Tech & Cloud Solutions",
+                services: [
+                    { icon: "☁️", title: "AWS Cloud Migrations", desc: "Moving on-premise application frameworks to scalable, secure, and cost-optimized AWS cloud environments." },
+                    { icon: "⚡", title: "Serverless Microservices", desc: "Architecting highly available, modern application environments using AWS Lambda, API Gateway, and Fargate." },
+                    { icon: "🔄", title: "DevOps & CI/CD", desc: "Implementing GitOps workflows, automated tests, and continuous integration/deployment pipelines on AWS." }
+                ]
+            },
+            'real-estate': {
+                title: "Real Estate Development",
+                services: [
+                    { icon: "🏗️", title: "Structural Property Development", desc: "Building sustainable, modern residential developments and state-of-the-art commercial business spaces." },
+                    { icon: "📈", title: "Real Estate Investment Portfolio", desc: "Offering institutional high-yield property investment strategies and transparent asset management options." },
+                    { icon: "🔑", title: "Turnkey Property Management", desc: "Providing full-lifecycle facility maintenance, tenant support structures, and corporate lease negotiations." }
+                ]
+            },
+            hospitality: {
+                title: "Hospitality & Entertainment Operations",
+                services: [
+                    { icon: "🏨", title: "Luxury Lounge & Spaces", desc: "Managing modern boutique spaces focusing on bespoke customer services and premium leisure options." },
+                    { icon: "🍸", title: "Bar & Mixology Curation", desc: "Operating high-end, contemporary entertainment spaces with world-class hospitality personnel." },
+                    { icon: "🍽️", title: "Corporate Event Hosting", desc: "Providing premium venue logistics, complete menu management, and tailored organizational hosting packages." }
+                ]
+            },
+            auto: {
+                title: "Automobile Sales & Procurement",
+                services: [
+                    { icon: "🚗", title: "Premium Vehicle Dealership", desc: "Sourcing and retailing premium brand-new and certified foreign-used luxury, commercial, and utility vehicles." },
+                    { icon: "🏢", title: "Corporate Fleet Logistics", desc: "Customized corporate vehicle procurement strategies, structured logistics management, and asset financing setup." },
+                    { icon: "🔧", title: "After-Sales Infrastructure", desc: "Comprehensive maintenance networks, original spare part verification systems, and vehicular warranty processing." }
+                ]
+            }
+        };
+
+        function changeSector(sectorKey, element) {
+            const currentData = sectorData[sectorKey];
+            if (!currentData) return;
+
+            document.getElementById('display-title').innerText = currentData.title;
+            const gridContainer = document.getElementById('display-grid');
+            gridContainer.innerHTML = '';
+
+            currentData.services.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <div class="service-icon">${item.icon}</div>
+                    <h3>${item.title}</h3>
+                    <p>${item.desc}</p>
+                `;
+                gridContainer.appendChild(card);
+            });
+
+            const allTabs = document.querySelectorAll('.tab-btn');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        async function submitToAwsApi(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "Processing Transmission... ⏳";
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                sector: document.getElementById('sectorSelect').value,
+                message: document.getElementById('brief').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // DEV OVERSIGHT TIP: Replace this placeholder link with your AWS API Gateway invoke URL once configured
+            const AWS_API_ENDPOINT = "https://amazonaws.com";
+
+            try {
+                const response = await fetch(AWS_API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Submission failed.');
+                }
+
+                const result = await response.json();
+                alert('Registry submitted successfully.');
+                console.log('AWS API success:', result);
+                document.getElementById('awsContactForm').reset();
+            } catch (error) {
+                console.error('AWS submission error:', error);
+                alert('Unable to submit your registry brief right now. Please try again later.');
+            } finally {
+                submitBtn.innerText = 'Submit Registry Brief ✓';
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Initialize default content
+        changeSector('tech', document.querySelector('.tab-btn.active'));
+    </script>
+</body>
+</html>
