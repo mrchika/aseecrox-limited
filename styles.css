@@ -72,3 +72,12 @@ footer {
     color: var(--text-muted);
     border-top: 1px solid #334155;
 }
+.logo { width: 120px; margin-bottom: 20px; }
+.team { padding: 80px 0; background: var(--bg-light); }
+.team h2 { text-align: center; margin-bottom: 40px; }
+.contact-form { max-width: 600px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
+.contact-form input, .contact-form textarea {
+    padding: 12px; border-radius: 8px; border: 1px solid #334155;
+    background: var(--bg-light); color: var(--text); font-family: 'Inter';
+}
+.contact-info { margin-top: 30px; }

@@ -10,6 +10,7 @@
 <body>
     <header class="hero">
         <div class="container">
+            <img src="logo.jpeg" alt="Aseecrox Limited Logo" class="logo">
             <h1>Aseecrox Limited</h1>
             <h2>Cloud Infrastructure & DevOps Engineering</h2>
             <p>We build, secure, and scale cloud systems on AWS, Azure, and GCP. From CI/CD to Kubernetes, we automate everything.</p>
@@ -20,30 +21,15 @@
     <section class="services container">
         <h2>Our Cloud & DevOps Services</h2>
         <div class="grid">
-            <div class="card">
-                <h3>☁️ Cloud Architecture</h3>
-                <p>Design scalable, cost-optimized, and secure cloud infrastructure on AWS, Azure, and GCP.</p>
-            </div>
-            <div class="card">
-                <h3>⚙️ CI/CD Pipelines</h3>
-                <p>Automate deployments with GitHub Actions, Jenkins, and GitLab CI for faster, safer releases.</p>
-            </div>
-            <div class="card">
-                <h3>🐳 Containerization</h3>
-                <p>Docker and Kubernetes orchestration for microservices, scaling, and high availability.</p>
-            </div>
-            <div class="card">
-                <h3>📜 Infrastructure as Code</h3>
-                <p>Manage infrastructure with Terraform and CloudFormation. Repeatable, versioned, and secure.</p>
-            </div>
-            <div class="card">
-                <h3>📊 Monitoring & Logging</h3>
-                <p>CloudWatch, Prometheus, Grafana. Full observability for your apps and servers 24/7.</p>
-            </div>
-            <div class="card">
-                <h3>🔒 Cloud Security</h3>
-                <p>IAM, Security Groups, Vault, and compliance best practices to keep your cloud secure.</p>
-            </div>
+            <div class="card"><h3>☁️ Cloud Architecture</h3><p>Design scalable, cost-optimized, and secure cloud infrastructure on AWS, Azure, and GCP.</p></div>
+            <div class="card"><h3>⚙️ CI/CD Pipelines</h3><p>Automate deployments with GitHub Actions, Jenkins, and GitLab CI for faster, safer releases.</p></div>
+            <div class="card"><h3>🐳 Containerization</h3><p>Docker and Kubernetes orchestration for microservices, scaling, and high availability.</p></div>
+            <div class="card"><h3>📜 Infrastructure as Code</h3><p>Manage infrastructure with Terraform and CloudFormation. Repeatable, versioned, and secure.</p></div>
+            <div class="card"><h3>📊 Monitoring & Logging</h3><p>CloudWatch, Prometheus, Grafana. Full observability for your apps and servers 24/7.</p></div>
+            <div class="card"><h3>🔒 Cloud Security</h3><p>IAM, Security Groups, Vault, and compliance best practices to keep your cloud secure.</p></div>
+            <!-- ADD YOUR OTHER SERVICES HERE -->
+            <div class="card"><h3>💻 Web Development</h3><p>Custom websites and web apps built with modern tech stacks.</p></div>
+            <div class="card"><h3>📱 Mobile App Development</h3><p>iOS and Android apps that are fast, secure, and scalable.</p></div>
         </div>
     </section>
 
@@ -59,11 +45,30 @@
         </div>
     </section>
 
+    <section class="team container">
+        <h2>Meet Our Executives</h2>
+        <div class="grid">
+            <div class="card"><h3>CEO Name</h3><p>Chief Executive Officer</p></div>
+            <div class="card"><h3>CTO Name</h3><p>Chief Technology Officer</p></div>
+            <div class="card"><h3>COO Name</h3><p>Chief Operating Officer</p></div>
+        </div>
+    </section>
+
     <section id="contact" class="contact container">
         <h2>Let’s Build Your Cloud</h2>
-        <p>Need a DevOps Engineer or Cloud Architect? Let’s talk.</p>
-        <p><strong>Email:</strong> hello@aseecrox.com</p>
-        <p><strong>Location:</strong> Lagos, Nigeria</p>
+        <p>Need a DevOps Engineer or Cloud Architect? Send us a message.</p>
+        
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Tell us about your project" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Request</button>
+        </form>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> hello@aseecrox.com</p>
+            <p><strong>Location:</strong> Lagos, Nigeria</p>
+        </div>
     </section>
 
     <footer>
