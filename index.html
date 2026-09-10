@@ -1,1 +1,218 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASEECROX LIMITED | Enterprise Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Main Corporate Banner Header -->
+        <header class="hero-banner">
+            <div class="logo-area">
+                <img src="logo.jpeg" alt="Aseecrox Logo" class="brand-logo" onerror="this.style.display='none';">
+                <span class="logo-text">ASEECROX LIMITED</span>
+            </div>
+            <h1>Innovating Tech, Real Estate, Hospitality & Automotive Sales</h1>
+        </header>
+
+        <!-- Sector Dynamic Switcher Navigation Tabs -->
+        <nav class="sector-tabs">
+            <button class="tab-btn active" onclick="changeSector('tech', this)">
+                <span>☁️</span> Tech & Cloud
+            </button>
+            <button class="tab-btn" onclick="changeSector('real-estate', this)">
+                <span>🏢</span> Real Estate
+            </button>
+            <button class="tab-btn" onclick="changeSector('hospitality', this)">
+                <span>🏨</span> Hospitality
+            </button>
+            <button class="tab-btn" onclick="changeSector('auto', this)">
+                <span>🚗</span> Auto Sales
+            </button>
+        </nav>
+
+        <!-- Dynamic Grid Content Injection Container -->
+        <main class="services-panel">
+            <h2 id="display-title" class="panel-title">Tech & Cloud Solutions</h2>
+            <div id="display-grid" class="services-grid">
+                <!-- Javascript builds content nodes here dynamically -->
+            </div>
+        </main>
+
+        <!-- Lower Section Layout: Executive Leadership Info + Registry Form -->
+        <section class="info-footer-layout">
+            <div class="info-sidebar">
+                <!-- Corporate Leadership Block -->
+                <div class="info-block">
+                    <h3>👥 Executive Leadership</h3>
+                    <div class="leader-item">
+                        <div class="leader-name">Eric Chika Ukpaka</div>
+                        <div class="leader-title">Chief Executive Officer (CEO)</div>
+                    </div>
+                    <div class="leader-item">
+                        <div class="leader-name">Samson Ukpaka</div>
+                        <div class="leader-title">Managing Director (MD)</div>
+                    </div>
+                </div>
+
+                <!-- Corporate Location Address Block -->
+                <div class="info-block">
+                    <h3>📍 Headquarters</h3>
+                    <p class="hq-text">21, Isheri Road, Ojodu,<br>Lagos, Nigeria.</p>
+                    <div class="phone-container">
+                        <span class="phone-badge">📞 0703 879 7948</span>
+                        <span class="phone-badge">📞 0805 756 0799</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Input Collection Form Registry Component -->
+            <div class="registry-container">
+                <h3>📋 Project Inquiry Registry</h3>
+                <p class="registry-subtitle">Submit your requirements below.</p>
+                
+                <form id="awsContactForm" onsubmit="submitToAwsApi(event)">
+                    <div class="form-group">
+                        <label for="fullName">Full Name / Corporate Entity</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="e.g. John Doe / ABC Tech Ltd" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Official Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="name@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sectorSelect">Target Business Sector</label>
+                        <select id="sectorSelect" class="form-control" required>
+                            <option value="" disabled selected>Select a sector...</option>
+                            <option value="tech">Tech & Cloud Solutions</option>
+                            <option value="real-estate">Real Estate Development</option>
+                            <option value="hospitality">Hospitality & Bar Management</option>
+                            <option value="auto">Automobile Sales</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="brief">Project Requirements / Brief</label>
+                        <textarea id="brief" class="form-control" rows="4" placeholder="Describe your project..." required></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="submit-btn">
+                        Submit Registry Brief ✓
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script Application Logic Controller -->
+    <script>
+        const sectorData = {
+            tech: {
+                title: "Tech & Cloud Solutions",
+                services: [
+                    { icon: "☁️", title: "AWS Cloud Migrations", desc: "Moving on-premise application frameworks to scalable, secure, and cost-optimized AWS cloud environments." },
+                    { icon: "⚡", title: "Serverless Microservices", desc: "Architecting highly available, modern application environments using AWS Lambda, API Gateway, and Fargate." },
+                    { icon: "🔄", title: "DevOps & CI/CD", desc: "Implementing GitOps workflows, automated tests, and continuous integration/deployment pipelines on AWS." }
+                ]
+            },
+            'real-estate': {
+                title: "Real Estate Development",
+                services: [
+                    { icon: "🏗️", title: "Structural Property Development", desc: "Building sustainable, modern residential developments and state-of-the-art commercial business spaces." },
+                    { icon: "📈", title: "Real Estate Investment Portfolio", desc: "Offering institutional high-yield property investment strategies and transparent asset management options." },
+                    { icon: "🔑", title: "Turnkey Property Management", desc: "Providing full-lifecycle facility maintenance, tenant support structures, and corporate lease negotiations." }
+                ]
+            },
+            hospitality: {
+                title: "Hospitality & Entertainment Operations",
+                services: [
+                    { icon: "🏨", title: "Luxury Lounge & Spaces", desc: "Managing modern boutique spaces focusing on bespoke customer services and premium leisure options." },
+                    { icon: "🍸", title: "Bar & Mixology Curation", desc: "Operating high-end, contemporary entertainment spaces with world-class hospitality personnel." },
+                    { icon: "🍽️", title: "Corporate Event Hosting", desc: "Providing premium venue logistics, complete menu management, and tailored organizational hosting packages." }
+                ]
+            },
+            auto: {
+                title: "Automobile Sales & Procurement",
+                services: [
+                    { icon: "🚗", title: "Premium Vehicle Dealership", desc: "Sourcing and retailing premium brand-new and certified foreign-used luxury, commercial, and utility vehicles." },
+                    { icon: "🏢", title: "Corporate Fleet Logistics", desc: "Customized corporate vehicle procurement strategies, structured logistics management, and asset financing setup." },
+                    { icon: "🔧", title: "After-Sales Infrastructure", desc: "Comprehensive maintenance networks, original spare part verification systems, and vehicular warranty processing." }
+                ]
+            }
+        };
+
+        function changeSector(sectorKey, element) {
+            const currentData = sectorData[sectorKey];
+            if (!currentData) return;
+
+            document.getElementById('display-title').innerText = currentData.title;
+            const gridContainer = document.getElementById('display-grid');
+            gridContainer.innerHTML = '';
+
+            currentData.services.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <div class="service-icon">${item.icon}</div>
+                    <h3>${item.title}</h3>
+                    <p>${item.desc}</p>
+                `;
+                gridContainer.appendChild(card);
+            });
+
+            const allTabs = document.querySelectorAll('.tab-btn');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        async function submitToAwsApi(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "Processing Transmission... ⏳";
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                sector: document.getElementById('sectorSelect').value,
+                message: document.getElementById('brief').value,
+                timestamp: new Date().toISOString()
+            };
+
+            const AWS_API_ENDPOINT = "https://amazonaws.com";
+
+            try {
+                const response = await fetch(AWS_API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Request failed with status ${response.status}`);
+                }
+
+                alert('Your project inquiry has been submitted successfully.');
+                document.getElementById('awsContactForm').reset();
+            } catch (error) {
+                console.error('Unable to submit project inquiry:', error);
+                alert('Unable to submit your inquiry. Please try again later.');
+            } finally {
+                submitBtn.innerText = 'Submit Registry Brief ✓';
+                submitBtn.disabled = false;
+            }
+        }
+
+        changeSector('tech', document.querySelector('.tab-btn.active'));
+    </script>
+</body>
+</html>
