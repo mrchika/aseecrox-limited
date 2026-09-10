@@ -3,194 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aseecrox Limited | Diversified Corporate Solutions</title>
+    <title>Aseecrox Limited - Cloud Infrastructure & DevOps Engineering</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header>
+    <header class="hero">
         <div class="container">
-            <img src="logo.jpeg" alt="Aseecrox Limited Logo" class="company-logo">
-            <h1 class="logo">ASEECROX <span>LIMITED</span></h1>
-            <p class="tagline">Innovating Tech, Real Estate, Hospitality & Automotive Sales</p>
+            <h1>Aseecrox Limited</h1>
+            <h2>Cloud Infrastructure & DevOps Engineering</h2>
+            <p>We build, secure, and scale cloud systems on AWS, Azure, and GCP. From CI/CD to Kubernetes, we automate everything.</p>
+            <a href="#contact" class="btn">Book a Cloud Consultation</a>
         </div>
     </header>
 
-    <!-- Navigation Tabs System - ONLY 1 NAV -->
-    <nav class="tab-navigation">
-        <div class="container">
-            <button class="tab-btn active" onclick="openTab(event, 'tech')">💻 Tech & Cloud</button>
-            <button class="tab-btn" onclick="openTab(event, 'realestate')">🏗️ Real Estate</button>
-            <button class="tab-btn" onclick="openTab(event, 'hospitality')">🍹 Hospitality</button>
-            <button class="tab-btn" onclick="openTab(event, 'auto')">🚗 Auto Sales</button>
+    <section class="services container">
+        <h2>Our Cloud & DevOps Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>☁️ Cloud Architecture</h3>
+                <p>Design scalable, cost-optimized, and secure cloud infrastructure on AWS, Azure, and GCP.</p>
+            </div>
+            <div class="card">
+                <h3>⚙️ CI/CD Pipelines</h3>
+                <p>Automate deployments with GitHub Actions, Jenkins, and GitLab CI for faster, safer releases.</p>
+            </div>
+            <div class="card">
+                <h3>🐳 Containerization</h3>
+                <p>Docker and Kubernetes orchestration for microservices, scaling, and high availability.</p>
+            </div>
+            <div class="card">
+                <h3>📜 Infrastructure as Code</h3>
+                <p>Manage infrastructure with Terraform and CloudFormation. Repeatable, versioned, and secure.</p>
+            </div>
+            <div class="card">
+                <h3>📊 Monitoring & Logging</h3>
+                <p>CloudWatch, Prometheus, Grafana. Full observability for your apps and servers 24/7.</p>
+            </div>
+            <div class="card">
+                <h3>🔒 Cloud Security</h3>
+                <p>IAM, Security Groups, Vault, and compliance best practices to keep your cloud secure.</p>
+            </div>
         </div>
-    </nav>
+    </section>
 
-    <main class="container">
-        <!-- TECH TAB -->
-        <section id="tech" class="tab-content active tab-tech-bg">
-            <h2>Tech & Cloud Solutions</h2>
-            <div class="grid">
-                <a href="#corporate-info" class="card feature-card clickable-card" onclick="selectService('Tech', 'AWS Cloud Migrations')">
-                    <h3>☁️ AWS Cloud Migrations</h3>
-                    <p>Moving on-premise application frameworks to scalable, secure, and cost-optimized AWS cloud environments.</p>
-                </a>
-                <a href="#corporate-info" class="card feature-card clickable-card" onclick="selectService('Tech', 'Serverless Microservices')">
-                    <h3>⚡ Serverless Microservices</h3>
-                    <p>Architecting highly available, modern application environments using AWS Lambda, API Gateway, and Fargate.</p>
-                </a>
-                <a href="#corporate-info" class="card feature-card clickable-card" onclick="selectService('Tech', 'DevOps & CI/CD Pipeline Automation')">
-                    <h3>🔧 DevOps & CI/CD Pipeline Automation</h3>
-                    <p>Implementing GitOps workflows. Automated continuous integration and deployment pipelines on AWS.</p>
-                </a>
+    <section class="tech">
+        <div class="container">
+            <h2>Technologies We Use</h2>
+            <div class="tech-grid">
+                <span>AWS</span><span>Azure</span><span>GCP</span>
+                <span>Docker</span><span>Kubernetes</span><span>Terraform</span>
+                <span>Jenkins</span><span>GitHub Actions</span><span>Ansible</span>
+                <span>Linux</span><span>Python</span><span>Prometheus</span>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- REAL ESTATE TAB -->
-        <section id="realestate" class="tab-content tab-realestate-bg">
-            <h2>Real Estate Development</h2>
-            <div class="grid">
-                <a href="#corporate-info" class="card estate-card clickable-card" onclick="selectService('RealEstate', 'Commercial Projects')">
-                    <h3>🏢 Commercial Projects</h3>
-                    <p>High-end corporate office complexes and mixed-use developments built to global standards.</p>
-                </a>
-                <a href="#corporate-info" class="card estate-card clickable-card" onclick="selectService('RealEstate', 'Residential Estates')">
-                    <h3>🏡 Residential Estates</h3>
-                    <p>Luxury gated communities and smart homes designed for modern living and maximum ROI.</p>
-                </a>
-            </div>
-        </section>
+    <section id="contact" class="contact container">
+        <h2>Let’s Build Your Cloud</h2>
+        <p>Need a DevOps Engineer or Cloud Architect? Let’s talk.</p>
+        <p><strong>Email:</strong> hello@aseecrox.com</p>
+        <p><strong>Location:</strong> Lagos, Nigeria</p>
+    </section>
 
-        <!-- HOSPITALITY TAB -->
-        <section id="hospitality" class="tab-content tab-hospitality-bg">
-            <h2>Hospitality & Design</h2>
-            <div class="grid">
-                <a href="#corporate-info" class="card hospitality-card clickable-card" onclick="selectService('Hospitality', 'Luxury Lounges & Bars')">
-                    <h3>🍸 Luxury Lounges & Bars</h3>
-                    <p>Vibrant spaces designed for premium experience, ambiance, and high-traffic customer engagement.</p>
-                </a>
-                <a href="#corporate-info" class="card hospitality-card clickable-card" onclick="selectService('Hospitality', 'Boutique Hotels')">
-                    <h3>🏨 Boutique Hotels</h3>
-                    <p>Full-service hospitality design and management focused on guest experience and operational efficiency.</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- AUTOMOTIVE TAB -->
-        <section id="auto" class="tab-content tab-auto-bg">
-            <h2>Automotive Solutions</h2>
-            <div class="grid">
-                <a href="#corporate-info" class="card auto-card clickable-card" onclick="selectService('Automotive', 'Luxury & Sports Fleets')">
-                    <h3>🏎️ Luxury & Sports Fleets</h3>
-                    <p>Sourcing and importing custom luxury and high-performance vehicles for individuals and corporations.</p>
-                </a>
-                <a href="#corporate-info" class="card auto-card clickable-card" onclick="selectService('Automotive', 'Fleet Management')">
-                    <h3>🚚 Fleet Management</h3>
-                    <p>Corporate fleet procurement, maintenance, and logistics solutions for businesses.</p>
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- CORPORATE INFO FORM SECTION - ONLY 1 FORM NOW -->
-    <div class="container">
-       <section id="corporate-info" class="corporate-info-section">
-            <div class="info-grid">
-                
-                <!-- Left: Corporate Data -->
-                <div class="info-column">
-                    <h3>👥 Executive Leadership</h3>
-                    <div class="leadership-card">
-                        <div class="avatar">👨‍💼</div>
-                        <div>
-                            <h4>Eric Chika Ukpaka</h4>
-                            <p class="role">Chief Executive Officer (CEO)</p>
-                        </div>
-                    </div>
-                    <div class="leadership-card">
-                        <div class="avatar">👨‍💻</div>
-                        <div>
-                            <h4>Samson Ukpaka</h4>
-                            <p class="role">Managing Director (MD)</p>
-                        </div>
-                    </div>
-                    <h3 style="margin-top: 30px;">📍 Headquarters</h3>
-                    <p class="address">21, Isheri Road, Ojodu,<br>Lagos, Nigeria.</p>
-                    <div class="contact-links">
-                        <a href="tel:+2347038797948" class="contact-btn">0703 879 7948</a>
-                        <a href="tel:+2348057560799" class="contact-btn">0805 756 0799</a>
-                    </div>
-                </div>
-
-                <!-- Right: Interactive Registration Form -->
-                <div class="info-column">
-                    <h3>📨 Project Inquiry Registry</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 20px;">Submit your requirements below.</p>
-                    
-                    <form class="inquiry-form" onsubmit="handleFormSubmit(event)">
-                        <div class="form-group">
-                            <label>Full Name / Corporate Entity</label>
-                            <input type="text" id="client-name" required placeholder="e.g., John Doe / ABC Tech Ltd">
-                        </div>
-                        <div class="form-group">
-                            <label>Official Email Address</label>
-                            <input type="email" id="client-email" required placeholder="name@company.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Target Business Sector</label>
-                            <select id="sector-select" required>
-                                <option value="" disabled selected>Select a sector...</option>
-                                <option value="Tech">💻 Cloud Engineering & Tech Services</option>
-                                <option value="RealEstate">🏗️ Real Estate Development</option>
-                                <option value="Hospitality">🍹 Hospitality & Luxury Lounges</option>
-                                <option value="Automotive">🚗 Automotive Fleet Procurement</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Project Requirements / Brief</label>
-                            <textarea id="project-brief" rows="4" required placeholder="Describe your project..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-form-btn">Submit Registry Brief 🚀</button>
-                    </form>
-                    
-                    <div id="form-success-alert" class="form-success-hidden">
-                        🎉 <strong>Brief Registered!</strong> Thank you.
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ALL JS IN ONE PLACE -->
-    <script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].classList.remove("active");
-        }
-        tablinks = document.getElementsByClassName("tab-btn");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].classList.remove("active");
-        }
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-
-    function selectService(sector, serviceName) {
-        document.getElementById('sector-select').value = sector;
-        document.getElementById('project-brief').value = `I am interested in: ${serviceName}. Please send me more details.`;
-        document.querySelector('.corporate-info-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        document.getElementById('form-success-alert').className = 'form-success-visible';
-        setTimeout(() => {
-            document.getElementById('form-success-alert').className = 'form-success-hidden';
-        }, 5000);
-    }
-    </script>
+    <footer>
+        <p>© 2026 Aseecrox Limited. Cloud Infrastructure & DevOps Engineering.</p>
+    </footer>
 </body>
 </html>
