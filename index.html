@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASEECROX LIMITED | Enterprise Portal</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -64,6 +66,7 @@
                 <div class="info-block">
                     <h3>📍 Headquarters</h3>
                     <p class="hq-text">21, Isheri Road, Ojodu,<br>Lagos, Nigeria.</p>
+                    <p class="hq-text"><a href="mailto:Aseecroxlimited@gmail.com">Aseecroxlimited@gmail.com</a></p>
                     <div class="phone-container">
                         <span class="phone-badge">📞 0703 879 7948</span>
                         <span class="phone-badge">📞 0805 756 0799</span>
@@ -104,8 +107,9 @@
                     </div>
 
                     <button type="submit" id="submitBtn" class="submit-btn">
-                        Submit Registry Brief ✓
+                        Send project inquiry
                     </button>
+                    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
@@ -160,9 +164,10 @@
                 const card = document.createElement('div');
                 card.className = 'service-card';
                 card.innerHTML = `
-                    <div class="service-icon">${item.icon}</div>
+                    <div class="service-icon" aria-hidden="true">${item.icon}</div>
                     <h3>${item.title}</h3>
                     <p>${item.desc}</p>
+                    <button type="button" class="service-action" onclick="requestService('${sectorKey}', '${item.title.replace(/'/g, "\\'")}')">Discuss this service <span aria-hidden="true">&rarr;</span></button>
                 `;
                 gridContainer.appendChild(card);
             });
@@ -172,11 +177,19 @@
             element.classList.add('active');
         }
 
+        function requestService(sectorKey, serviceTitle) {
+            document.getElementById('sectorSelect').value = sectorKey;
+            document.getElementById('brief').value = `I am interested in ${serviceTitle}. `;
+            document.getElementById('awsContactForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            document.getElementById('brief').focus();
+        }
+
         async function submitToAwsApi(event) {
             event.preventDefault();
             const submitBtn = document.getElementById('submitBtn');
-            submitBtn.innerText = "Processing Transmission... ⏳";
+            submitBtn.innerText = 'Sending inquiry...';
             submitBtn.disabled = true;
+            document.getElementById('formStatus').textContent = '';
 
             const formData = {
                 name: document.getElementById('fullName').value,
@@ -201,13 +214,13 @@
                     throw new Error(`Request failed with status ${response.status}`);
                 }
 
-                alert('Your project inquiry has been submitted successfully.');
+                document.getElementById('formStatus').textContent = 'Thanks. Your inquiry has been sent; we will be in touch soon.';
                 document.getElementById('awsContactForm').reset();
             } catch (error) {
                 console.error('Unable to submit project inquiry:', error);
-                alert('Unable to submit your inquiry. Please try again later.');
+                document.getElementById('formStatus').textContent = 'We could not send your inquiry. Please try again or email Aseecroxlimited@gmail.com.';
             } finally {
-                submitBtn.innerText = 'Submit Registry Brief ✓';
+                submitBtn.innerText = 'Send project inquiry';
                 submitBtn.disabled = false;
             }
         }
