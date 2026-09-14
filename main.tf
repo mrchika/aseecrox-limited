@@ -17,13 +17,13 @@ terraform {
 variable "receiver_email" {
   description = "Verified address that receives new client inquiries."
   type        = string
-  default     = "Aseecroxlimited@gmail.com"
+  default     = "aseecroxlimited@gmail.com"
 }
 
 variable "sender_email" {
   description = "Verified SES identity used as the From address."
   type        = string
-  default     = "Aseecroxlimited@gmail.com"
+  default     = "aseecroxlimited@gmail.com"
 }
 
 provider "aws" {

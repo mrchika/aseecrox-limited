@@ -79,7 +79,11 @@
                 <h3>📋 Project Inquiry Registry</h3>
                 <p class="registry-subtitle">Submit your requirements below.</p>
                 
-                <form id="awsContactForm" onsubmit="submitToAwsApi(event)">
+                <form id="awsContactForm" name="client-inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="submitToAwsApi(event)">
+                    <input type="hidden" name="form-name" value="client-inquiry">
+                    <p hidden>
+                        <label>Do not fill this out if you are human: <input name="bot-field"></label>
+                    </p>
                     <div class="form-group">
                         <label for="fullName">Full Name / Corporate Entity</label>
                         <input type="text" id="fullName" class="form-control" placeholder="e.g. John Doe / ABC Tech Ltd" required>
@@ -199,7 +203,7 @@
                 timestamp: new Date().toISOString()
             };
 
-            const AWS_API_ENDPOINT = "https://tkvftwk12a.execute-api.us-east-1.amazonaws.com/prod/contact";
+            const AWS_API_ENDPOINT = "https://1mski0a40d.execute-api.us-east-1.amazonaws.com/prod/contact";
 
             try {
                 const response = await fetch(AWS_API_ENDPOINT, {
