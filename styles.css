@@ -42,7 +42,10 @@ body {
 }
 
 .brand-logo {
-    max-height: 40px;
+    width: auto;
+    max-width: 220px;
+    max-height: 84px;
+    object-fit: contain;
     border-radius: 4px;
 }
 
@@ -56,6 +59,17 @@ body {
     font-size: 1.6rem;
     font-weight: 400;
     color: #cbd5e1;
+}
+
+@media (max-width: 520px) {
+    .logo-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .brand-logo {
+        max-height: 72px;
+    }
 }
 
 /* ==========================================================================
